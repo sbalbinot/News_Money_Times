@@ -1,6 +1,6 @@
 {
-  "name": "Moneytimes",
-  "description": "Capture news from Moneytimes site.",
+  "name": "Money_Times",
+  "description": "Capture news data from Moneytimes site.",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Credentials.Activities": "1.1.6479.13204",

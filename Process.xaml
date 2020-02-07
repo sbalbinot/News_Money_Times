@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>737,1869</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>700,1909</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -63,7 +63,7 @@
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="717,1809" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="680,1809" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="MoneytimesStartupBrowser" />
       <Variable x:TypeArguments="ui:Browser" Name="NewsPageBrowser" />
@@ -75,7 +75,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" Browser="[in_Browser]" BrowserType="Chrome" DisplayName="Attach MoneyTimes Browser" sap:VirtualizedContainerService.HintSize="675,259" sap2010:WorkflowViewState.IdRef="BrowserScope_1" TimeoutMS="[CInt(in_Config(&quot;TimeoutMedium&quot;).ToString)]" UiBrowser="[MoneytimesStartupBrowser]">
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" Browser="[in_Browser]" BrowserType="Chrome" DisplayName="Attach MoneyTimes Browser" sap:VirtualizedContainerService.HintSize="638,259" sap2010:WorkflowViewState.IdRef="BrowserScope_1" TimeoutMS="[CInt(in_Config(&quot;TimeoutMedium&quot;).ToString)]" UiBrowser="[MoneytimesStartupBrowser]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -92,7 +92,7 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" BrowserType="Chrome" DisplayName="Attach News Browser" sap:VirtualizedContainerService.HintSize="675,976" sap2010:WorkflowViewState.IdRef="BrowserScope_2" Selector="[&quot;&lt;html app='chrome.exe' url='&quot;+ in_TransactionItem(&quot;URL da notícia&quot;).ToString +&quot;' /&gt;&quot;]" TimeoutMS="[CInt(in_Config(&quot;TimeoutMedium&quot;).ToString)]" UiBrowser="[NewsPageBrowser]">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" BrowserType="Chrome" DisplayName="Attach News Browser" sap:VirtualizedContainerService.HintSize="638,976" sap2010:WorkflowViewState.IdRef="BrowserScope_2" Selector="[&quot;&lt;html app='chrome.exe' url='&quot;+ in_TransactionItem(&quot;URL da notícia&quot;).ToString +&quot;' /&gt;&quot;]" TimeoutMS="[CInt(in_Config(&quot;TimeoutMedium&quot;).ToString)]" UiBrowser="[NewsPageBrowser]">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -111,7 +111,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:FindChildren Children="[NewsChildren]" DisplayName="Find News Paragraphs" Filter="&lt;webctrl tag='P' /&gt;" sap:VirtualizedContainerService.HintSize="562,68" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
               <ui:FindChildren.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl tag='DIV' class='single__text' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeoutMedium&quot;).ToString)]" WaitForReady="COMPLETE" />
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;webctrl tag='DIV' class='single__text' /&gt;" TimeoutMS="[CInt(in_Config(&quot;TimeoutMedium&quot;).ToString)]" WaitForReady="INTERACTIVE" />
               </ui:FindChildren.Target>
             </ui:FindChildren>
             <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Paragraph" sap:VirtualizedContainerService.HintSize="562,568" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[NewsChildren]">
@@ -131,7 +131,7 @@
                         <OutArgument x:TypeArguments="x:String">[NewsParagraph]</OutArgument>
                       </ui:GetAttribute.Result>
                       <ui:GetAttribute.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[newsChild]" TimeoutMS="[CInt(in_Config(&quot;TimeoutMedium&quot;).ToString)]" WaitForReady="COMPLETE" />
+                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[newsChild]" TimeoutMS="[CInt(in_Config(&quot;TimeoutMedium&quot;).ToString)]" WaitForReady="INTERACTIVE" />
                       </ui:GetAttribute.Target>
                     </ui:GetAttribute>
                     <If Condition="[String.IsNullOrWhiteSpace(NewsParagraph)]" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_2">
@@ -161,7 +161,7 @@
         </ActivityAction>
       </ui:BrowserScope.Body>
     </ui:BrowserScope>
-    <Assign DisplayName="Assign News Text" sap:VirtualizedContainerService.HintSize="675,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign DisplayName="Assign News Text" sap:VirtualizedContainerService.HintSize="638,60" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[in_TransactionItem("Texto da notícia")]</OutArgument>
       </Assign.To>
@@ -169,7 +169,7 @@
         <InArgument x:TypeArguments="x:Object">[NewsText]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Startup" sap:VirtualizedContainerService.HintSize="675,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign Startup" sap:VirtualizedContainerService.HintSize="638,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[in_TransactionItem("Nome da startup")]</OutArgument>
       </Assign.To>
@@ -177,7 +177,7 @@
         <InArgument x:TypeArguments="x:Object">[in_Startup]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Vehicle" sap:VirtualizedContainerService.HintSize="675,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="Assign Vehicle" sap:VirtualizedContainerService.HintSize="638,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[in_TransactionItem("Nome do veículo")]</OutArgument>
       </Assign.To>
@@ -185,7 +185,7 @@
         <InArgument x:TypeArguments="x:Object">["Money Times"]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign DisplayName="Assign Capture Date" sap:VirtualizedContainerService.HintSize="675,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign DisplayName="Assign Capture Date" sap:VirtualizedContainerService.HintSize="638,60" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Object">[in_TransactionItem("Data e hora da Captura")]</OutArgument>
       </Assign.To>
